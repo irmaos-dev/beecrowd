@@ -20,3 +20,30 @@ while (contador !== 0) {
   contador = parseInt(lines.shift());
   console.log('');
 }
+
+/** ALTERNATIVA
+ 
+var input = require('fs').readFileSync(0, 'utf8');
+var tamanho = parseInt(input.split('\n'));
+var meio = Math.ceil(tamanho/2);
+
+for (var i = 1; i <= tamanho; i++) {
+    let linha = '';
+    for (var j = 1; j <= tamanho; j++) {
+        if (i <= meio) {
+            if (j <= meio) {
+                linha += Math.min(i, j) + ' ';
+            } else {
+                linha += Math.min(i, (tamanho - j + 1)) + ' ';
+            }
+        } else {
+            if (j > meio) {
+                linha += Math.min((tamanho - i + 1), (tamanho - j + 1)) + ' ';
+            } else {
+                linha += Math.min((tamanho - i + 1), j) + ' ';
+            }
+        }
+    }
+    console.log(linha)
+}
+*/
